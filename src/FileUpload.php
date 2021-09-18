@@ -209,7 +209,7 @@ public function __construct(){
 
 				 $this->image->save(Storage::disk($storage)->path($imagePath));
 
-				 return $this->getStoredUrl($imagePath,$filename);
+				 return $this->getStoredUrl($path,$filename);
 
 		 } else {
 				 $this->file->storeAs($path, $filename, $storage);
