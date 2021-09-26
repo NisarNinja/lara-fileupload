@@ -3,6 +3,7 @@
 namespace Easoblue\LaraFileUpload;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Str;
 
 class FileUpload{
 
@@ -199,7 +200,7 @@ public function __construct(){
  public function uploadAs($filename, $path = '', $storage = 'public')
  {
 
-		 $filename = $filename ?: $this->file->hashName();
+		 $filename = $filename ?: Str::random(70).".".$this->file->guessExtension();
 		 if ($this->image) {
 				 $imagePath = "{$path}/{$filename}";
 
