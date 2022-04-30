@@ -107,7 +107,7 @@ public function __construct(){
  public function makeImage()
  {
 
-		 $this->file = Image::make($this->file);
+		 $this->file = Image::make($this->file->getRealPath());
 
 		 return $this;
  }
@@ -170,7 +170,7 @@ public function __construct(){
  {
 		 if (!$this->image) {
 				 // if (self::isImage($this->file)) {
-						 return Image::make($this->file);
+						 return Image::make($this->file->getRealPath());
 				 // }
 		 }
 
